@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kubeclus"
+    labels:
+        app: "kubeclus"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: kubeclus2265-kubeclus.a3cb10cea7794268aedc.westus2.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kubeclus"
+                servicePort: 80
